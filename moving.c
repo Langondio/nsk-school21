@@ -13,6 +13,8 @@ int direction = 1;
 
 void render();
 void move_player(char action);
+void move_ball_x();
+void move_ball_y();
 
 int main(void) {
     char start;
@@ -29,6 +31,8 @@ int main(void) {
                 break;
             }
             move_player(action);
+            move_ball_x();
+            move_ball_y();
         }
         printf("Game over");
     }
@@ -77,8 +81,16 @@ void move_player(char action) {
     }
 }
 void move_ball_x() {
-
+    if (direction > 0) {
+        ball_x += 1;
+    } else if (direction < 0) {
+        ball_x -= 1;
+    }
 }
 void move_ball_y() {
-
+    if (direction > 0) {
+        ball_y += 1;
+    } else if (direction < 0) {
+        ball_y -= 1;
+    }
 }
